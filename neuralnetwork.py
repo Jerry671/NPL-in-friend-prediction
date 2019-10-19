@@ -8,7 +8,6 @@
 # (c) Tariq Rashid, 2016
 # license is GPLv2
 
-
 #%%
 import numpy
 # scipy.special for the sigmoid function expit()
