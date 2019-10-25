@@ -4,7 +4,7 @@ import pandas as pd
 import networkx.readwrite.pajek
 G=nx.Graph()
 #filename="F:\\git\\NRP\\soc-pokec-relationships.txt"
-filename="F:\\git\\NRP\\test.txt"
+filename="F:\\git\\NRP\\Network-relation-prediction\\test.txt"
 edges = pd.read_table(filename, header=None, sep='\n')
 for i in range(len(edges)):
     coordinate = edges[0][i].split()
