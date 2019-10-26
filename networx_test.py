@@ -11,6 +11,6 @@ for i in range(len(edges)):
     G.add_edge(coordinate[0],coordinate[1])
 print(G.number_of_nodes())
 print(networkx.readwrite.pajek.generate_pajek(G))
-
+nx.write_pajek(G,"test.net")
 #nx.draw(G)
 #plt.show()
