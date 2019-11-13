@@ -5,7 +5,11 @@
 基于开源项目linkpred实现网络关系的预测
 <br>用户可以通过修改path(训练集)预测不同人际关系网络之间的好友关系可能性
 <br>每次预测显示四组人之间的好友关系可能性，通过点击NEXT按钮进行下一组预测
-
+<br>支持python3.+版本
+## 使用说明
+默认使用斯坦福大学的soc-pokec-relationships数据集进行训练，详情参考项目介绍
+<br>编译运行GUIshow.py，将会显示如下图的结果
+<br>其中前两列代表人物标号，第三列为两人可能为好友关系的概率
 ### 使用到的开源项目
 [linkpred](https://github.com/rafguns/linkpred)
 
