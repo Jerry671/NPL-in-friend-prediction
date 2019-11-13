@@ -9,40 +9,49 @@
 ## 使用说明
 默认使用斯坦福大学的soc-pokec-relationships数据集进行训练，详情参考项目介绍
 <br>编译运行GUIshow.py，将会显示如下图的结果
+<br>![yucejieguo](https://github.com/Twinklight/Network-relation-prediction/blob/godzyp/%E9%A2%84%E6%B5%8B%E7%BB%93%E6%9E%9C.jpg "预测结果")
 <br>其中前两列代表人物标号，第三列为两人可能为好友关系的概率
 ### 使用到的开源项目
 [linkpred](https://github.com/rafguns/linkpred)
 
 ### 项目主要功能实现代码
 ////////////////////////////////////////////////////////////////////////////////////////
-<br>import tkinter as tk
-<br>import sys
-<br>root = tk.Tk()
-<br>path = r'soc-pokec-relationships_sub-CommonNeighbours-predictions_2019-10-27_21.30.txt'
-<br>lst = []
-<br>f = open(path, "r")
-<br>for line in f:
-    <br>subList = line.replace('\n', '').split('\t')
-<br>lst.append(subList)
-<br>f.close()
-<br>for i in range(20):
-    <br>sys.stdout.write(str(lst[i]) + '\n')
-<br>sys.stdout.write("list is done")
-<br>root.title("link prediction")
-<br>list_box = tk.Listbox(root)
-<br>def go():
-    <br>sys.stdout.write("changed\n")
-    <br>for i in range(4):  # 每次多显示4个
-        <br>>list_box.delete(8)
-        <br>>slist = lst.pop(0)
-        <br>>str = slist[0] + '   ' + slist[1] + '   ' + slist[2]
-        <br>>list_box.insert(0,str)
-<br>but = tk.Button(root,text='next',bg='white', command=go)
-<br>for i in range(8):
-    <br>slist = lst.pop(0)
-    <br>str = slist[0] + '   ' + slist[1] + '   ' + slist[2]
-    <br>list_box.insert(0, str)
-<br>list_box.pack()
-<br>but.pack()
-<br>root.mainloop()
+```python
+import tkinter as tk
+import sys
+root = tk.Tk()
+path = r'soc-pokec-relationships_sub-CommonNeighbours-predictions_2019-10-27_21.30.txt'
+lst = []
+
+f = open(path, "r")
+for line in f:
+    subList = line.replace('\n', '').split('\t')
+    lst.append(subList)
+f.close()
+for i in range(20):
+    sys.stdout.write(str(lst[i]) + '\n')
+sys.stdout.write("list is done")
+root.title("link prediction")
+
+list_box = tk.Listbox(root)
+
+def go():
+    sys.stdout.write("changed\n")
+    for i in range(4):  # 每次多显示4个
+        list_box.delete(8)
+        slist = lst.pop(0)
+        str = slist[0] + '   ' + slist[1] + '   ' + slist[2]
+        list_box.insert(0,str)
+
+
+but = tk.Button(root,text='next',bg='white', command=go)
+
+for i in range(8):
+    slist = lst.pop(0)
+    str = slist[0] + '   ' + slist[1] + '   ' + slist[2]
+    list_box.insert(0, str)
+list_box.pack()
+but.pack()
+root.mainloop()
+```
 <br>////////////////////////////////////////////////////////////////////////////////////////
