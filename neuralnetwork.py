@@ -2,7 +2,7 @@
 # To add a new markdown cell, type '#%% [markdown]'
 
 
-#%%
+#%% 
 # python notebook for Make Your Own Neural Network
 # code for a 3-layer neural network, and code for learning the MNIST dataset
 # (c) Tariq Rashid, 2016
