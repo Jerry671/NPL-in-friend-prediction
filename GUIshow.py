@@ -3,7 +3,7 @@ import sys
 root = tk.Tk()
 path = r'soc-pokec-relationships_sub-CommonNeighbours-predictions_2019-10-27_21.30.txt'
 lst = []
-
+ 
 f = open(path, "r")
 for line in f:
     subList = line.replace('\n', '').split('\t')
